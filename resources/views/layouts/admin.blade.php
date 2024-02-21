@@ -64,11 +64,10 @@
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }}
-                                @yield('content')
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('admin.dashboard')}}">{{__('Dashboard')}}</a>
+                                <a class="dropdown-item" href="{{ route('admin.dashboard') }}">{{__('Dashboard')}}</a>
                                 <a class="dropdown-item" href="{{ url('profile') }}">{{__('Profile')}}</a>
                                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -86,8 +85,35 @@
             </div>
         </nav>
 
-        <main class="bg-primary">
-            
+        <main class="">
+            <div class="container-fluid">
+                <div class="row">
+                    
+                    <div class="col-md-3 col-lg-2 col-sm-12 p-5 vh-100 border-end border-solid">
+                        <div class="sidebar position-fixed">
+                            <ul class="list-unstyled">
+                                <li class="fs-5 fw-bold mb-3">
+                                    <a href="{{ route('admin.dashboard')}}" class="text-decoration-none {{ Route::currentRouteName() == 'admin.dashboard' ? 'text-warning' : 'text-dark'}}">
+                                        Overview
+                                    </a>
+                                </li>
+                                <li class="fs-5 fw-bold mb-3">
+                                    <a href="{{ route('admin.projects.index')}}" class="text-decoration-none {{ Route::currentRouteName() == 'admin.projects.index' ? 'text-warning' : 'text-dark'}}">
+                                        Projects
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+
+                    <div class="col-md-9 col-lg-10">
+                        <div class="content">
+                            @yield('content')
+                        </div> 
+                    </div>
+                </div>
+            </div>
         </main>
     </div>
 </body>
