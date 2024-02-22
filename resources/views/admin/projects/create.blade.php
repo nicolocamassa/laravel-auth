@@ -5,41 +5,61 @@
         @csrf
         <div class="mb-3">
             <label for="title" class="form-label">Title</label>
-            <input type="text" class="form-control" id="text" name="title">
-          </div>
-          <div class="mb-3">
+            <input type="text" class="form-control @error('title') is-invalid @enderror" id="text" name="title">
+            @error('title')
+                <div class="text-danger">{{ $message }}</div>
+            @enderror
+        </div>
+        <div class="mb-3">
             <label for="description" class="form-label">Description</label>
-            <textarea class="form-control" id="description" rows="3" name="description"></textarea>          
-          </div>
-          <div class="mb-3">
+            <textarea class="form-control @error('description') is-invalid @enderror" id="description" rows="3" name="description"></textarea>
+            @error('description')
+                <div class="text-danger">{{ $message }}</div>
+            @enderror
+        </div>
+        <div class="mb-3">
             <label for="image" class="form-label">Image</label>
-            <input type="text" class="form-control" id="exampleInputPassword1" name="image">
-          </div>
-          <div class="mb-3">
+            <input type="text" class="form-control @error('image') is-invalid @enderror" id="exampleInputPassword1" name="image">
+            @error('image')
+                <div class="text-danger">{{ $message }}</div>
+            @enderror
+        </div>
+        <div class="mb-3">
             <label for="date" class="form-label">Date</label>
-            <input type="date" class="form-control" id="date" name="date">
-          </div>
-          <div class="mb-3">
+            <input type="date" class="form-control @error('date') is-invalid @enderror" id="date" name="date">
+            @error('date')
+                <div class="text-danger">{{ $message }}</div>
+            @enderror
+        </div>
+        <div class="mb-3">
             <label for="language" class="form-label">Language</label>
-            <select class="form-select" name="language">
-                <option selected>Language</option>
+            <select class="form-select @error('language') is-invalid @enderror" name="language">
+                <option value="">Language</option>
                 <option value="1">Italiano</option>
                 <option value="2">Inglese</option>
                 <option value="3">Spagnolo</option>
-              </select>
-          </div>
-          <div class="mb-3">
+            </select>
+            @error('language')
+              <div class="text-danger">{{ $message }}</div>
+            @enderror
+        </div>
+
+        <div class="mb-3">
             <div class="mb-3">
                 <label for="status" class="form-label">Status</label>
-                <select class="form-select" name="status">
-                    <option selected>Project status</option>
+                <select class="form-select @error('status') is-invalid @enderror" name="status">
+                    <option value="">Project status</option>
                     <option value="1">Iniziale</option>
                     <option value="2">In corso</option>
                     <option value="3">Completato</option>
-                  </select>
-              </div>
-          </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
-        
+                </select>
+                @error('status')
+                    <div class="text-danger">{{ $message }}</div>
+                @enderror
+            </div>
+            
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+
     </form>
 @endsection
