@@ -1,11 +1,11 @@
 @extends('layouts.admin')
 
 @section('content')
-<div class="container p-5">
+<div class="container py-5 px-0">
     <div class="row">
             @foreach ($projects as $project)
 
-                <div class="col-sm-12 col-md-6 col-lg-4">
+                <div class="col-sm-12 col-md-6 col-lg-3">
                     <div class="card mb-3" style="width: 18rem;">
                         <div class="card_content">
                             <img src="{{ $project->image ? $project->image : 'https://i1.wp.com/potafiori.com/wp-content/uploads/2020/04/placeholder.png?ssl=1' }}" class="card-img-top" alt="...">
