@@ -32,12 +32,12 @@
             @enderror
         </div>
         <div class="mb-3">
-            <label for="language" class="form-label">Language</label>
-            <select class="form-select @error('language') is-invalid @enderror" name="language">
+            <label for="languages" class="form-label">Language</label>
+            <select class="form-select @error('languages') is-invalid @enderror" name="languages">
                 <option value="">Language</option>
-                <option value="1">Italiano</option>
-                <option value="2">Inglese</option>
-                <option value="3">Spagnolo</option>
+                <option value="Italiano">Italiano</option>
+                <option value="Inglese">Inglese</option>
+                <option value="Spagnolo">Spagnolo</option>
             </select>
             @error('language')
               <div class="text-danger">{{ $message }}</div>
@@ -49,9 +49,9 @@
                 <label for="status" class="form-label">Status</label>
                 <select class="form-select @error('status') is-invalid @enderror" name="status">
                     <option value="">Project status</option>
-                    <option value="1">Iniziale</option>
-                    <option value="2">In corso</option>
-                    <option value="3">Completato</option>
+                    <option value="Iniziale">Iniziale</option>
+                    <option value="In corso">In corso</option>
+                    <option value="Completato">Completato</option>
                 </select>
                 @error('status')
                     <div class="text-danger">{{ $message }}</div>

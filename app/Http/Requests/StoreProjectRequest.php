@@ -28,7 +28,7 @@ class StoreProjectRequest extends FormRequest
 		    'description'     => 'required',
 		    'image'           => 'max:255',
 		    'date'            => 'required',
-		    'language'       => 'required',
+		    'languages'       => 'required',
 		    'status'          => 'required'
         ];
     }
@@ -42,7 +42,7 @@ class StoreProjectRequest extends FormRequest
             'description.required' => 'The description is mandatory',
             'image.max' => 'You can enter a maximum of 30 characters',
             'date.required' => 'The date is mandatory',
-            'language.required' => 'The language is mandatory',
+            'languages.required' => 'The language is mandatory',
             'status.required' => 'The status is mandatory',
         ];
     }

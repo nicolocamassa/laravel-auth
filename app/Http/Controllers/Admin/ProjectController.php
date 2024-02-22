@@ -44,14 +44,9 @@ class ProjectController extends Controller
         $form = $request->all();
 
         $project = new Project();
-        $project->title = $form['title'];
-        $project->description = $form['description'];
-        $project->image = $form['image'];
-        $project->date = $form['date'];
-        $project->languages = $form['language'];
-        $project->status = $form['status'];
+        $project->fill($form);
 
-        $project->save();
+        $project->save(); 
         return redirect()->route('admin.projects.index');
     }
 
