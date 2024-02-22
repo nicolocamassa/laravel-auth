@@ -12,10 +12,22 @@
                         <div class="card-body">
                           <h5 class="card-title">{{ $project->title }}</h5>
                           <p class="card-text">{{ $project->description }}</p>
-                          <a href="{{ route('admin.projects.show', ['project' => $project->id])}}" class="btn btn-primary">View More</a>
+
+                          <div class="d-flex">
+
+                            <a href="{{ route('admin.projects.show', ['project' => $project->id])}}" class="btn btn-primary me-1">View More</a>
+  
+                            <form action="{{ route('admin.projects.destroy', ['project' => $project->id])}}" method="post" onsubmit="return confirm('Sei sicuro di voler eliminare {{ $project->title }}?')">
+                              @csrf
+                              @method('DELETE')
+                              <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                              <a href="" ></a>
+                            </form>
+                          </div>
+                          
                         </div>
                       </div>
-                        </div>
+                    </div>
                         
                 </div>
             @endforeach
