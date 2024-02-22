@@ -16,7 +16,8 @@
                           <div class="d-flex">
 
                             <a href="{{ route('admin.projects.show', ['project' => $project->id])}}" class="btn btn-primary me-1">View More</a>
-  
+                            <a href="{{ route('admin.projects.edit', ['project' => $project->id])}}" class="btn btn-warning me-1"><i class="fas fa-pencil"></i></a>
+
                             <form action="{{ route('admin.projects.destroy', ['project' => $project->id])}}" method="post" onsubmit="return confirm('Sei sicuro di voler eliminare {{ $project->title }}?')">
                               @csrf
                               @method('DELETE')
