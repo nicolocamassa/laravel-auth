@@ -20,8 +20,8 @@
                             <a href="{{ route('admin.projects.edit', ['project' => $project->id])}}" class="btn btn-warning me-1"><i class="fas fa-pencil"></i></a>
 
                             
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#delete-modal-{{ $project->id }}">
-                              Launch demo modal
+                            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete-modal-{{ $project->id }}">
+                              <i class="fas fa-trash"></i>
                             </button>
                             
                           </div>
