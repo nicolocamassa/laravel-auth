@@ -3,6 +3,7 @@
 @section('content')
 <div class="container py-5 px-0">
     <div class="row">
+      
             @foreach ($projects as $project)
 
                 <div class="col-sm-12 col-md-6 col-lg-3">
@@ -18,23 +19,25 @@
                             <a href="{{ route('admin.projects.show', ['project' => $project->id])}}" class="btn btn-primary me-1">View More</a>
                             <a href="{{ route('admin.projects.edit', ['project' => $project->id])}}" class="btn btn-warning me-1"><i class="fas fa-pencil"></i></a>
 
-                            <form action="{{ route('admin.projects.destroy', ['project' => $project->id])}}" method="post" onsubmit="return confirm('Sei sicuro di voler eliminare {{ $project->title }}?')">
-                              @csrf
-                              @method('DELETE')
-                              <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i></button>
-                              <a href="" ></a>
-                            </form>
+                            
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#delete-modal-{{ $project->id }}">
+                              Launch demo modal
+                            </button>
+                            
                           </div>
+                          
                           
                         </div>
                       </div>
                     </div>
                         
                 </div>
+                @include('admin.projects.partials.modal')
             @endforeach
-        
+            
     </div>
-</div>
     
+</div>
+
 
 @endsection
