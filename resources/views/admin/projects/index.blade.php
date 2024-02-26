@@ -9,7 +9,11 @@
                 <div class="col-sm-12 col-md-6 col-lg-3">
                     <div class="card mb-3" style="width: 18rem;">
                         <div class="card_content">
-                            <img src="{{ $project->image ? $project->image : 'https://i1.wp.com/potafiori.com/wp-content/uploads/2020/04/placeholder.png?ssl=1' }}" class="card-img-top" alt="...">
+                          @if($project->image !== null)
+                            <img src="{{ asset('/storage/' . $project->image) }}" alt="">
+                          @else
+                          <img src="{{ asset('/img/placeholder.svg') }}" alt="">
+                          @endif
                         <div class="card-body">
                           <h5 class="card-title">{{ $project->title }}</h5>
                           <p class="card-text">{{ $project->description }}</p>
