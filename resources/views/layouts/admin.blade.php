@@ -45,18 +45,34 @@
                                     {{-- config('app.name', 'Laravel') --}}
                                 </a>
                             </li>
-                            <li class="fs-5 fw-bold mb-3">
-                                <a href="{{ route('admin.dashboard') }}"
-                                    class="text-decoration-none {{ Route::currentRouteName() == 'admin.dashboard' ? 'text-dark' : 'text-secondary' }}">
-                                    Overview
-                                </a>
-                            </li>
-                            <li class="fs-5 fw-bold mb-3">
+                            
+                            <li class="fs-5 fw-bold mb-3 d-flex align-items-center">
                                 <a href="{{ route('admin.projects.index') }}"
                                     class="text-decoration-none {{ Route::currentRouteName() == 'admin.projects.index' ? 'text-dark' : 'text-secondary' }}">
-                                    Projects
+                                    <div class="d-flex align-items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-grid-fill align-middle mt-1 me-3" viewBox="0 0 16 16">
+                                            <path d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5zm8 0A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5zm-8 8A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5zm8 0A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5z"/>
+                                        </svg> 
+                                        <div class="align-middle">
+                                            Overview
+                                        </div>
+                                    </div>
                                 </a>
                             </li>
+                            <li class="fs-5 fw-bold mb-3 d-flex align-items-center">
+                                <a href="{{ route('admin.dashboard') }}"
+                                    class="text-decoration-none {{ Route::currentRouteName() == 'admin.dashboard' ? 'text-dark' : 'text-secondary' }}">
+                                    <div class="d-flex align-items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-bar-chart-fill mt-2 me-3" viewBox="0 0 16 16">
+                                            <path d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1z"/>
+                                        </svg>
+                                        <div class="align-middle">
+                                            Dashboard
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            
                         </ul>
                     </div>
                 </div>
