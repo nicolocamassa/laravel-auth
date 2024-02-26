@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-    <form action="{{ route('admin.projects.store') }}" method="post" class="mx-auto p-5">
+    <form action="{{ route('admin.projects.store') }}" method="post" enctype="multipart/form-data" class="mx-auto p-5">
         @csrf
         <div class="mb-3">
             <label for="title" class="form-label">Title</label>
@@ -19,7 +19,7 @@
         </div>
         <div class="mb-3">
             <label for="image" class="form-label">Image</label>
-            <input type="text" class="form-control @error('image') is-invalid @enderror" id="exampleInputPassword1" name="image">
+            <input type="file" class="form-control @error('image') is-invalid @enderror" id="exampleInputPassword1" name="image">
             @error('image')
                 <div class="text-danger">{{ $message }}</div>
             @enderror
