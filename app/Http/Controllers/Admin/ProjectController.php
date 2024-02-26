@@ -91,6 +91,15 @@ class ProjectController extends Controller
     {
         $form = $request->all();
 
+        if($request->hasFile('image')){
+            if($project->image != null){
+                Storage::delete($project->image);
+            }
+            $path = Storage::disk('public')->put('project_image', $form['image']);
+            $form['image'] = $path;
+        }
+
+
         $project->update($form);
         return redirect()->route('admin.projects.index');
     }
